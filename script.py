@@ -54,11 +54,11 @@ def go(dir=dir):
 						break
 			if date == '':
 				continue
-			final.append(['DATE: ', str(date), '\t\tLINE: ', line.strip(), '\n'])
+			final.append(['DATE: ', date, '\t\tLINE: ', line.strip(), '\n'])
 	#print final
-	sorted(final, key=lambda x: x[1])
+	t = sorted(final, key=lambda x: int(x[1]))
 	f=open(dir+'out','wb')
-	for line in final:
+	for line in t:
 		f.write(''.join(line))
 
 if __name__ == '__main__':
